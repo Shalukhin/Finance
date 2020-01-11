@@ -1,0 +1,19 @@
+
+<user>
+	<id>1</id>
+	<login>Vasia</login>
+	<password>1234</password>
+	<role>user</role>
+</user>
+<user>
+	<id>2</id>
+	<login>admin</login>
+	<password>4321</password>
+	<role>admin</role>
+</user>
+<user>
+	<id>4</id>
+	<login>jena</login>
+	<password>555</password>
+	<role>user</role>
+</user>
