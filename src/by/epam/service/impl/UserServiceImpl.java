@@ -54,8 +54,25 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean login(String login, String password) {
-		// TODO Auto-generated method stub
+	public boolean login(String login, String password) throws ServiceException {
+		if (!Validator.isValidStrValue(login)) {			
+			throw new ServiceException("invalid_login");
+		}
+		if (!Validator.isValidStrValue(password)) {			
+			throw new ServiceException("invalid_password");
+		}
+		List<User> allUsers = null;
+		try {
+			allUsers = userDAO.read();
+		} catch (DAOException e) {
+			throw new ServiceException("List_users_error", e);
+		}
+		for (User user : allUsers) {			
+			if (user.getLogin().equals(login) && user.getPassword().equals(password)) {				
+				return true;
+			}
+		}
+		
 		return false;
 	}
 

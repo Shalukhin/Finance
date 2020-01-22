@@ -6,7 +6,7 @@ public class Validator {
 		if (value == null) {
 			return false;
 		}
-		return value.matches("[a-zA-Z0-9‡-ˇ¿-ﬂ∏®_-]+");
+		return value.matches("[a-zA-Z0-9–∞-—è–ê-–Ø—ë–Å_-]+");
 	}
 	
 	public static boolean isPositive(long value) {

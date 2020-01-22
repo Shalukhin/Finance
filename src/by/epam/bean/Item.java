@@ -2,7 +2,7 @@ package by.epam.bean;
 
 import java.util.Date;
 
-public class Expense {
+public class Item {
 	
 	private int id;
 	private int idUser;
@@ -10,11 +10,11 @@ public class Expense {
 	private long amountCoins;
 	private String kind;
 	
-	public Expense() {
+	public Item() {
 		super();
 	}
 
-	public Expense(int id, int idUser, Date date, long amountCoins, String kind) {		
+	public Item(int id, int idUser, Date date, long amountCoins, String kind) {		
 		super();
 		
 		this.id = id;
@@ -84,7 +84,7 @@ public class Expense {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Expense other = (Expense) obj;
+		Item other = (Item) obj;
 		if (amountCoins != other.amountCoins)
 			return false;
 		if (date == null) {
@@ -106,7 +106,7 @@ public class Expense {
 
 	@Override
 	public String toString() {
-		return "Expense [id=" + id + ", idUser=" + idUser + ", date=" + date + ", amountCoins=" + amountCoins
+		return "Item [id=" + id + ", idUser=" + idUser + ", date=" + date + ", amountCoins=" + amountCoins
 				+ ", kind=" + kind + "]";
 	}
 	

@@ -1,8 +1,8 @@
 package by.epam.service.factory;
 
-import by.epam.service.ExpenseService;
+import by.epam.service.ItemService;
 import by.epam.service.UserService;
-import by.epam.service.impl.ExpenseServiceImpl;
+import by.epam.service.impl.ItemServiceImpl;
 import by.epam.service.impl.UserServiceImpl;
 
 public class ServiceFactory {
@@ -10,7 +10,7 @@ public class ServiceFactory {
 	private static ServiceFactory instance = new ServiceFactory();
 	
 	private UserService userService = new UserServiceImpl();
-	private ExpenseService expenseService = new ExpenseServiceImpl();
+	private ItemService itemService = new ItemServiceImpl();
 	
 	private ServiceFactory() {};
 	
@@ -22,8 +22,8 @@ public class ServiceFactory {
 		return userService;
 	}
 	
-	public ExpenseService getExpenseService() {
-		return expenseService;
+	public ItemService getItemService() {
+		return itemService;
 	}
 	
 

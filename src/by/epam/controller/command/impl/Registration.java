@@ -1,13 +1,11 @@
 package by.epam.controller.command.impl;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import by.epam.controller.command.Command;
 import by.epam.controller.exception.ControllerException;
 import by.epam.service.UserService;
 import by.epam.service.exception.ServiceException;
 import by.epam.service.factory.ServiceFactory;
+import by.epam.util.Parser;
 
 public class Registration implements Command {
 
@@ -17,8 +15,8 @@ public class Registration implements Command {
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		UserService userService = serviceFactory.getUserService();		
 		
-		String login = getValueParam(request, "login");			
-		String password = getValueParam(request, "password");
+		String login = Parser.getValueParam(request, "login");			
+		String password = Parser.getValueParam(request, "password");
 		
 		boolean result = false;
 		try {
@@ -27,18 +25,6 @@ public class Registration implements Command {
 			throw new ControllerException("registration_error", e);
 		}
 		
-		return result ? "Поздравляем! Вы зарегистрировались!" : "При регистрации что-то пошло не так. Попробуйте ещё раз!";
+		return result ? "РџРѕР·РґСЂР°РІР»СЏРµРј! Р’С‹ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°Р»РёСЃСЊ!" : "РџСЂРё СЂРµРіРёСЃС‚СЂР°С†РёРё С‡С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·!";
 	}
-
-	private String getValueParam(String request, String nameParam) {
-		
-		Pattern pat = Pattern.compile(nameParam + "=(\\S+)");
-		Matcher mat = pat.matcher(request);
-		if (mat.find()) {
-			return mat.group(1);
-		} else {
-			return null;
-		}
-	}
-
 }

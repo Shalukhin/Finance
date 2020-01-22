@@ -5,12 +5,14 @@ import java.util.Map;
 
 import by.epam.controller.command.Command;
 import by.epam.controller.command.CommandName;
+import by.epam.controller.command.impl.AddItem;
 import by.epam.controller.command.impl.Balance;
-import by.epam.controller.command.impl.ListExpense;
+import by.epam.controller.command.impl.ListItems;
 import by.epam.controller.command.impl.Login;
 import by.epam.controller.command.impl.Logout;
 import by.epam.controller.command.impl.ProcessError;
 import by.epam.controller.command.impl.Registration;
+import by.epam.controller.command.impl.SumItems;
 
 public class CommandProvider {
 
@@ -20,8 +22,10 @@ public class CommandProvider {
 		repository.put(CommandName.REGISTRATION, new Registration());
 		repository.put(CommandName.LOGIN, new Login());
 		repository.put(CommandName.LOGOUT, new Logout());
+		repository.put(CommandName.ADD_ITEM, new AddItem());
 		repository.put(CommandName.BALANCE, new Balance());
-		repository.put(CommandName.LIST_EXPENSE, new ListExpense());
+		repository.put(CommandName.SUM_ITEMS, new SumItems());
+		repository.put(CommandName.LIST_ITEMS, new ListItems());
 		repository.put(CommandName.PROCESS_ERROR, new ProcessError());
 	}
 
