@@ -1,8 +1,5 @@
 package by.epam.bean;
 
-import by.epam.util.Validator;
-import by.epam.util.exception.InvalidValueException;
-
 public class User {
 	
 	private int id;
@@ -20,12 +17,8 @@ public class User {
 	}
 	
 	
-	public User(int id, String login, String password, String role) throws InvalidValueException {
+	public User(int id, String login, String password, String role) {
 		super();
-		
-		validateText(login, "user_login");
-		validateText(password, "user_passord");
-		validateText(role, "user_role");
 		
 		this.id = id;
 		this.login = login;
@@ -43,31 +36,22 @@ public class User {
 	public String getLogin() {
 		return login;
 	}
-	public void setLogin(String login) throws InvalidValueException {
-		validateText(login, "user_login");
+	public void setLogin(String login) {		
 		this.login = login;
 	}
 	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String password) throws InvalidValueException {
-		validateText(password, "user_passord");
+	public void setPassword(String password) {		
 		this.password = password;
 	}
 	public String getRole() {
 		return role;
 	}
-	public void setRole(String role) throws InvalidValueException {
-		validateText(role, "user_role");
+	public void setRole(String role) {		
 		this.role = role;
 	}
 	
-	private void validateText(String value, String message) throws InvalidValueException {
-		if (!Validator.isValidStrValue(value)) {
-			throw new InvalidValueException("invalid_" + message);
-		}
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;

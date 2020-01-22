@@ -1,35 +1,49 @@
 package by.epam.view;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 
+import by.epam.bean.Expense;
 import by.epam.bean.User;
-import by.epam.dao.exception.DAOException;
-import by.epam.dao.impl.FileUserDAO;
+import by.epam.controller.Controller;
+import by.epam.controller.exception.ControllerException;
+import by.epam.util.ScannersUtils;
 import by.epam.util.exception.InvalidValueException;
 
 public class Runner {
 
-	public static void main(String[] args) throws DAOException, InvalidValueException {
+	public static void main(String[] args) throws InvalidValueException {
+		
+		Controller controller = new Controller();
 
-		FileUserDAO test = new FileUserDAO();
+		User user = null;
 
-		ArrayList<User> u = test.read();
+		int viewCommand;
 
-		for (User uu : u) {
-			System.out.println(uu);
-		}
+		do {
+			System.out.println("Выберите дейчтвие:\n1) Регистрация\n2) Вход\n\n0) Выход из программы");
 
-		User user = new User(4, "jena", "555", "user");
+			viewCommand = ScannersUtils.getIntFromConsol();
 
-		test.create(user);
+			switch (viewCommand) {
+			case (1):
+				System.out.println("\tВведите логин:");
+				String login = ScannersUtils.getStrFromConsol();
+				System.out.println("\tВведите пароль:");
+				String password = ScannersUtils.getStrFromConsol();
+				
+				String request = "registration login=" + login + " password=" + password;
+				try {
+					System.out.println(controller.executeTask(request));
+				} catch (ControllerException e) {
+					System.out.println("При регистрации что-то пошло не так. Попробуйте ещё раз!");
+				}
+				System.out.println();
+				break;
+			case (2):
+				System.out.println("Вход");
+				break;
+			}
 
-		u = test.read();
-
-		for (User uu : u) {
-			System.out.println(uu);
-		}
+		} while (viewCommand != 0);
 
 	}
 

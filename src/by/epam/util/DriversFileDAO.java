@@ -16,10 +16,10 @@ public class DriversFileDAO {
 		
 		long fileLengthBeforeWrite = file.length();
 		
-		FileWriter fileWriter = new FileWriter(file, true);
+		FileWriter fileWriter = new FileWriter(file, true);		
 		
+		fileWriter.append(text);
 		fileWriter.append("\n");
-		fileWriter.append(text);		
 		fileWriter.close();
 
 		if (file.length() != fileLengthBeforeWrite) {

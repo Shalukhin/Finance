@@ -7,7 +7,6 @@ import by.epam.dao.UserDAO;
 import by.epam.dao.exception.DAOException;
 import by.epam.util.ConstantsDAO;
 import by.epam.util.DriversFileDAO;
-import by.epam.util.exception.InvalidValueException;
 
 public class FileUserDAO implements UserDAO {
 
@@ -169,15 +168,34 @@ public class FileUserDAO implements UserDAO {
 		
 		ArrayList<String> usersArrStr = DriversFileDAO.getArrayTagsFromTextByName(usersBaseStr, "user");
 		for (String userStr : usersArrStr) {
+			
 			User user = new User();
-			user.setId(Integer.valueOf(DriversFileDAO.getArrayTagsFromTextByName(userStr, "id").get(0)));
+			
 			try {
-				user.setLogin(DriversFileDAO.getArrayTagsFromTextByName(userStr, "login").get(0));
-				user.setPassword(DriversFileDAO.getArrayTagsFromTextByName(userStr, "password").get(0));
-				user.setRole(DriversFileDAO.getArrayTagsFromTextByName(userStr, "role").get(0));
-			} catch (InvalidValueException e) {
-				throw new DAOException("user_read_error", e);
-			}
+				
+				ArrayList<String> temp = DriversFileDAO.getArrayTagsFromTextByName(userStr, "id");
+				if (temp.size() > 0) {
+					user.setId(Integer.valueOf(temp.get(0)));
+				}
+				
+				temp = DriversFileDAO.getArrayTagsFromTextByName(userStr, "login");			
+				if (temp.size() > 0) {
+					user.setLogin(temp.get(0));
+				}
+				
+				temp = DriversFileDAO.getArrayTagsFromTextByName(userStr, "password");			
+				if (temp.size() > 0) {
+					user.setPassword(temp.get(0));
+				}
+				
+				temp = DriversFileDAO.getArrayTagsFromTextByName(userStr, "role");			
+				if (temp.size() > 0) {
+					user.setRole(temp.get(0));
+				}
+				
+			} catch (Exception e) {
+				throw new DAOException("expense_read_error", e);
+			}			
 
 			usersArr.add(user);
 		}

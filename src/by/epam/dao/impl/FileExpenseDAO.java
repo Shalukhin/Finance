@@ -1,15 +1,13 @@
 package by.epam.dao.impl;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import by.epam.bean.Expense;
 import by.epam.dao.ExpenseDAO;
 import by.epam.dao.exception.DAOException;
 import by.epam.util.ConstantsDAO;
 import by.epam.util.DriversFileDAO;
-import by.epam.util.exception.InvalidValueException;
 
 public class FileExpenseDAO implements ExpenseDAO{
 
@@ -41,7 +39,7 @@ public class FileExpenseDAO implements ExpenseDAO{
 	}
 
 	@Override
-	public List<Expense> read() throws DAOException {
+	public ArrayList<Expense> read() throws DAOException {
 		return buildArrayExpensesFromFile();
 	}
 
@@ -129,6 +127,8 @@ public class FileExpenseDAO implements ExpenseDAO{
 	}
 	
 	private String buildExpenseStr(Expense expense) {
+		
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd  HH:mm:ss");
 
 		StringBuilder expenseStr = new StringBuilder();
 		expenseStr.append("<expense>\n\t<id>");
@@ -136,7 +136,7 @@ public class FileExpenseDAO implements ExpenseDAO{
 		expenseStr.append("</id>\n\t<idUser>");
 		expenseStr.append(expense.getIdUser());
 		expenseStr.append("</idUser>\n\t<date>");
-		expenseStr.append(expense.getDate().toString());
+		expenseStr.append(simpleDateFormat.format(expense.getDate()));
 		expenseStr.append("</date>\n\t<amountCoins>");
 		expenseStr.append(expense.getAmountCoins());
 		expenseStr.append("</amountCoins>\n\t<kind>");
@@ -149,6 +149,8 @@ public class FileExpenseDAO implements ExpenseDAO{
 	private ArrayList<Expense> buildArrayExpensesFromFile() throws DAOException {
 		ArrayList<Expense> expensesArr = new ArrayList<>();
 		
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd  HH:mm:ss");
+		
 		String expensesBaseStr = null;
 		try {
 			expensesBaseStr = DriversFileDAO.extractTextFromFile(ConstantsDAO.LINK_EXPENSES);
@@ -159,14 +161,35 @@ public class FileExpenseDAO implements ExpenseDAO{
 		ArrayList<String> expensesArrStr = DriversFileDAO.getArrayTagsFromTextByName(expensesBaseStr, "expense");
 		for (String expenseStr : expensesArrStr) {
 			Expense expense = new Expense();
-			expense.setId(Integer.valueOf(DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "id").get(0)));
-			expense.setIdUser(Integer.valueOf(DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "idUser").get(0)));
 			
 			try {
-				expense.setDate(new Date(DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "login").get(0)));
-				expense.setAmountCoins(Long.valueOf(DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "amountCoins").get(0)));
-				expense.setKind(DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "kind").get(0));
-			} catch (InvalidValueException e) {
+				
+				ArrayList<String> temp = DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "id");
+				if(temp.size() > 0) {
+					expense.setId(Integer.valueOf(temp.get(0)));
+				}
+				
+				temp = DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "idUser");
+				if(temp.size() > 0) {
+					expense.setIdUser(Integer.valueOf(temp.get(0)));
+				}
+				
+				temp = DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "date");
+				if(temp.size() > 0) {
+					expense.setDate(simpleDateFormat.parse(temp.get(0)));					
+				}
+				
+				temp = DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "amountCoins");
+				if(temp.size() > 0) {
+					expense.setAmountCoins(Long.valueOf(temp.get(0)));					
+				}
+				
+				temp = DriversFileDAO.getArrayTagsFromTextByName(expenseStr, "kind");
+				if(temp.size() > 0) {
+					expense.setKind(temp.get(0));					
+				}
+				
+			} catch (Exception e) {
 				throw new DAOException("expense_read_error", e);
 			}
 

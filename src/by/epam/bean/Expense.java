@@ -2,9 +2,6 @@ package by.epam.bean;
 
 import java.util.Date;
 
-import by.epam.util.Validator;
-import by.epam.util.exception.InvalidValueException;
-
 public class Expense {
 	
 	private int id;
@@ -17,16 +14,8 @@ public class Expense {
 		super();
 	}
 
-	public Expense(int id, int idUser, Date date, long amountCoins, String kind) throws InvalidValueException {		
+	public Expense(int id, int idUser, Date date, long amountCoins, String kind) {		
 		super();
-		
-		if (date == null) {
-			throw new InvalidValueException("invalid_expense_data");
-		}
-		if (!Validator.isPositive(amountCoins)) {
-			throw new InvalidValueException("invalid_expense_amountCoins");
-		}
-		validateText(kind, "expense_kind");		
 		
 		this.id = id;
 		this.idUser = idUser;
@@ -55,11 +44,7 @@ public class Expense {
 		return date;
 	}
 
-	public void setDate(Date date) throws InvalidValueException {
-		if (date == null) {
-			throw new InvalidValueException("invalid_expense_data");
-		}
-		
+	public void setDate(Date date) {				
 		this.date = date;
 	}
 
@@ -67,11 +52,7 @@ public class Expense {
 		return amountCoins;
 	}
 
-	public void setAmountCoins(long amountCoins) throws InvalidValueException {
-		if (!Validator.isPositive(amountCoins)) {
-			throw new InvalidValueException("invalid_expense_amountCoins");
-		}
-		
+	public void setAmountCoins(long amountCoins) {		
 		this.amountCoins = amountCoins;
 	}
 
@@ -79,17 +60,9 @@ public class Expense {
 		return kind;
 	}
 
-	public void setKind(String kind) throws InvalidValueException {
-		validateText(kind, "expense_kind");
-		
+	public void setKind(String kind) {		
 		this.kind = kind;
-	}
-	
-	private void validateText(String value, String message) throws InvalidValueException {
-		if (!Validator.isValidStrValue(value)) {
-			throw new InvalidValueException("invalid_" + message);
-		}
-	}
+	}	
 
 	@Override
 	public int hashCode() {
@@ -137,8 +110,4 @@ public class Expense {
 				+ ", kind=" + kind + "]";
 	}
 	
-	
-	
-	
-
 }
