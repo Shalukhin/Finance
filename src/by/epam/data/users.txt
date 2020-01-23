@@ -10,3 +10,9 @@
 	<password>1234567</password>
 	<role>user</role>
 </user>
+<user>
+	<id>2</id>
+	<login>Mama</login>
+	<password>54321</password>
+	<role>user</role>
+</user>
