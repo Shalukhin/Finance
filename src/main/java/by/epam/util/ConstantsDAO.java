@@ -7,7 +7,7 @@ public class ConstantsDAO {
 	static {
 		StringBuilder link = new StringBuilder();
 		link.append(System.getProperty("user.dir"));
-		link.append("\\src\\by\\epam\\data\\users.txt");
+		link.append("\\src\\main\\resources\\data\\users.txt");
 		LINK_USERS = link.toString();
 	}
 
@@ -16,7 +16,7 @@ public class ConstantsDAO {
 	static {
 		StringBuilder link = new StringBuilder();
 		link.append(System.getProperty("user.dir"));
-		link.append("\\src\\by\\epam\\data\\items.txt");
+		link.append("\\src\\main\\resources\\data\\items.txt");
 		LINK_ITEMS = link.toString();
 	}
 }
