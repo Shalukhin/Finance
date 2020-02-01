@@ -1,4 +1,4 @@
-package by.epam.util;
+package main.java.by.epam.util;
 
 public class Validator {
 	

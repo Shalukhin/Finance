@@ -1,18 +1,18 @@
-package by.epam.controller;
+package main.java.by.epam.controller;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import by.epam.controller.command.Command;
-import by.epam.controller.command.CommandName;
-import by.epam.controller.command.impl.AddItem;
-import by.epam.controller.command.impl.Balance;
-import by.epam.controller.command.impl.ListItems;
-import by.epam.controller.command.impl.Login;
-import by.epam.controller.command.impl.Logout;
-import by.epam.controller.command.impl.ProcessError;
-import by.epam.controller.command.impl.Registration;
-import by.epam.controller.command.impl.SumItems;
+import main.java.by.epam.controller.command.Command;
+import main.java.by.epam.controller.command.CommandName;
+import main.java.by.epam.controller.command.impl.AddItem;
+import main.java.by.epam.controller.command.impl.Balance;
+import main.java.by.epam.controller.command.impl.ListItems;
+import main.java.by.epam.controller.command.impl.Login;
+import main.java.by.epam.controller.command.impl.Logout;
+import main.java.by.epam.controller.command.impl.ProcessError;
+import main.java.by.epam.controller.command.impl.Registration;
+import main.java.by.epam.controller.command.impl.SumItems;
 
 public class CommandProvider {
 

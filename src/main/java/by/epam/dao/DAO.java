@@ -1,8 +1,8 @@
-package by.epam.dao;
+package main.java.by.epam.dao;
 
 
 import java.util.List;
-import by.epam.dao.exception.DAOException;
+import main.java.by.epam.dao.exception.DAOException;
 
 public interface DAO <T> {
 

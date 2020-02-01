@@ -1,4 +1,4 @@
-package by.epam.service.exception;
+package main.java.by.epam.service.exception;
 
 public class ServiceException extends Exception {
 	

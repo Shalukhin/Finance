@@ -1,6 +1,6 @@
-package by.epam.controller.command.impl;
+package main.java.by.epam.controller.command.impl;
 
-import by.epam.controller.command.Command;
+import main.java.by.epam.controller.command.Command;
 
 public class Logout implements Command {
 

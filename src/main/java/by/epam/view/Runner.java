@@ -1,9 +1,9 @@
-package by.epam.view;
+package main.java.by.epam.view;
 
-import by.epam.controller.Controller;
-import by.epam.controller.exception.ControllerException;
-import by.epam.util.ScannersUtils;
-import by.epam.util.exception.InvalidValueException;
+import main.java.by.epam.controller.Controller;
+import main.java.by.epam.controller.exception.ControllerException;
+import main.java.by.epam.util.ScannersUtils;
+import main.java.by.epam.util.exception.InvalidValueException;
 
 public class Runner {
 

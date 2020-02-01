@@ -1,13 +1,13 @@
-package by.epam.service.impl;
+package main.java.by.epam.service.impl;
 
 import java.util.List;
-import by.epam.bean.User;
-import by.epam.dao.UserDAO;
-import by.epam.dao.exception.DAOException;
-import by.epam.dao.factory.DAOFactory;
-import by.epam.service.UserService;
-import by.epam.service.exception.ServiceException;
-import by.epam.util.Validator;
+import main.java.by.epam.bean.User;
+import main.java.by.epam.dao.UserDAO;
+import main.java.by.epam.dao.exception.DAOException;
+import main.java.by.epam.dao.factory.DAOFactory;
+import main.java.by.epam.service.UserService;
+import main.java.by.epam.service.exception.ServiceException;
+import main.java.by.epam.util.Validator;
 
 public class UserServiceImpl implements UserService {
 	

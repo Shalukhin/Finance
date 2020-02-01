@@ -1,15 +1,15 @@
-package by.epam.controller.command.impl;
+package main.java.by.epam.controller.command.impl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import by.epam.controller.command.Command;
-import by.epam.controller.exception.ControllerException;
-import by.epam.service.ItemService;
-import by.epam.service.exception.ServiceException;
-import by.epam.service.factory.ServiceFactory;
-import by.epam.util.Parser;
+import main.java.by.epam.controller.command.Command;
+import main.java.by.epam.controller.exception.ControllerException;
+import main.java.by.epam.service.ItemService;
+import main.java.by.epam.service.exception.ServiceException;
+import main.java.by.epam.service.factory.ServiceFactory;
+import main.java.by.epam.util.Parser;
 
 public class AddItem implements Command {
 

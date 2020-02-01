@@ -1,12 +1,12 @@
-package by.epam.dao.impl;
+package main.java.by.epam.dao.impl;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import by.epam.bean.User;
-import by.epam.dao.UserDAO;
-import by.epam.dao.exception.DAOException;
-import by.epam.util.ConstantsDAO;
-import by.epam.util.DriversFileDAO;
+import main.java.by.epam.bean.User;
+import main.java.by.epam.dao.UserDAO;
+import main.java.by.epam.dao.exception.DAOException;
+import main.java.by.epam.util.ConstantsDAO;
+import main.java.by.epam.util.DriversFileDAO;
 
 public class FileUserDAO implements UserDAO {
 

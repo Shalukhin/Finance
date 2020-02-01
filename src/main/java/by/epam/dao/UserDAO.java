@@ -1,7 +1,7 @@
-package by.epam.dao;
+package main.java.by.epam.dao;
 
-import by.epam.bean.User;
-import by.epam.dao.exception.DAOException;
+import main.java.by.epam.bean.User;
+import main.java.by.epam.dao.exception.DAOException;
 
 public interface UserDAO extends DAO<User>{	
 	

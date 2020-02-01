@@ -1,17 +1,17 @@
-package by.epam.service.impl;
+package main.java.by.epam.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import by.epam.bean.Item;
-import by.epam.bean.User;
-import by.epam.dao.ItemDAO;
-import by.epam.dao.UserDAO;
-import by.epam.dao.exception.DAOException;
-import by.epam.dao.factory.DAOFactory;
-import by.epam.service.ItemService;
-import by.epam.service.exception.ServiceException;
+import main.java.by.epam.bean.Item;
+import main.java.by.epam.bean.User;
+import main.java.by.epam.dao.ItemDAO;
+import main.java.by.epam.dao.UserDAO;
+import main.java.by.epam.dao.exception.DAOException;
+import main.java.by.epam.dao.factory.DAOFactory;
+import main.java.by.epam.service.ItemService;
+import main.java.by.epam.service.exception.ServiceException;
 
 public class ItemServiceImpl implements ItemService {
 

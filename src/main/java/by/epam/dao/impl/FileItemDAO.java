@@ -1,13 +1,13 @@
-package by.epam.dao.impl;
+package main.java.by.epam.dao.impl;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import by.epam.bean.Item;
-import by.epam.dao.ItemDAO;
-import by.epam.dao.exception.DAOException;
-import by.epam.util.ConstantsDAO;
-import by.epam.util.DriversFileDAO;
+import main.java.by.epam.bean.Item;
+import main.java.by.epam.dao.ItemDAO;
+import main.java.by.epam.dao.exception.DAOException;
+import main.java.by.epam.util.ConstantsDAO;
+import main.java.by.epam.util.DriversFileDAO;
 
 public class FileItemDAO implements ItemDAO{
 

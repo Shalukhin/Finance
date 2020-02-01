@@ -1,9 +1,9 @@
-package by.epam.dao.factory;
+package main.java.by.epam.dao.factory;
 
-import by.epam.dao.ItemDAO;
-import by.epam.dao.UserDAO;
-import by.epam.dao.impl.FileItemDAO;
-import by.epam.dao.impl.FileUserDAO;
+import main.java.by.epam.dao.ItemDAO;
+import main.java.by.epam.dao.UserDAO;
+import main.java.by.epam.dao.impl.FileItemDAO;
+import main.java.by.epam.dao.impl.FileUserDAO;
 
 public class DAOFactory {
 	

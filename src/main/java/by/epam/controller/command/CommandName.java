@@ -1,4 +1,4 @@
-package by.epam.controller.command;
+package main.java.by.epam.controller.command;
 
 public enum CommandName {
 

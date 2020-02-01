@@ -1,6 +1,6 @@
-package by.epam.dao;
+package main.java.by.epam.dao;
 
-import by.epam.bean.Item;
+import main.java.by.epam.bean.Item;
 
 public interface ItemDAO extends DAO<Item>{
 

@@ -1,6 +1,6 @@
-package by.epam.controller.command;
+package main.java.by.epam.controller.command;
 
-import by.epam.controller.exception.ControllerException;
+import main.java.by.epam.controller.exception.ControllerException;
 
 public interface Command {	
 	

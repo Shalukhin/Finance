@@ -1,6 +1,6 @@
-package by.epam.service;
+package main.java.by.epam.service;
 
-import by.epam.service.exception.ServiceException;
+import main.java.by.epam.service.exception.ServiceException;
 
 public interface UserService {
 	

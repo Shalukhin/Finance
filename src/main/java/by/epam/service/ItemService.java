@@ -1,11 +1,11 @@
-package by.epam.service;
+package main.java.by.epam.service;
 
 import java.util.Date;
 import java.util.List;
 
-import by.epam.bean.Item;
-import by.epam.bean.User;
-import by.epam.service.exception.ServiceException;
+import main.java.by.epam.bean.Item;
+import main.java.by.epam.bean.User;
+import main.java.by.epam.service.exception.ServiceException;
 
 public interface ItemService {
 	

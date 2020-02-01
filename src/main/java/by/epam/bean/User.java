@@ -1,4 +1,4 @@
-package by.epam.bean;
+package main.java.by.epam.bean;
 
 public class User {
 	

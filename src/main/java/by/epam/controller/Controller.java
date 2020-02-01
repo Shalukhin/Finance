@@ -1,8 +1,8 @@
-package by.epam.controller;
+package main.java.by.epam.controller;
 
-import by.epam.controller.command.Command;
-import by.epam.controller.exception.ControllerException;
-import by.epam.util.Parser;
+import main.java.by.epam.controller.command.Command;
+import main.java.by.epam.controller.exception.ControllerException;
+import main.java.by.epam.util.Parser;
 
 public class Controller {
 	

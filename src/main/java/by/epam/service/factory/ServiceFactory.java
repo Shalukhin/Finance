@@ -1,9 +1,9 @@
-package by.epam.service.factory;
+package main.java.by.epam.service.factory;
 
-import by.epam.service.ItemService;
-import by.epam.service.UserService;
-import by.epam.service.impl.ItemServiceImpl;
-import by.epam.service.impl.UserServiceImpl;
+import main.java.by.epam.service.ItemService;
+import main.java.by.epam.service.UserService;
+import main.java.by.epam.service.impl.ItemServiceImpl;
+import main.java.by.epam.service.impl.UserServiceImpl;
 
 public class ServiceFactory {
 	

@@ -1,4 +1,4 @@
-package by.epam.controller.exception;
+package main.java.by.epam.controller.exception;
 
 public class ControllerException extends Exception {
 	

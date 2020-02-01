@@ -1,4 +1,4 @@
-package by.epam.util.exception;
+package main.java.by.epam.util.exception;
 
 public class InvalidValueException extends Exception{
 
